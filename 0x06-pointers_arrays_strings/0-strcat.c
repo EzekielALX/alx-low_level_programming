@@ -1,15 +1,34 @@
-#include "main.h" 
-#include <unistd.h>  
+#include "main.h"
+
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * _strcat - function commute srtings
+ *  @dest: param pointer to a char
+ *  @src: param pointer to a char
+ *   Return: return value of dest
  *
- *  Return: On success 1.
- *   On error, -1 is returned, and errno is set appropriately
  */
-int _putchar(char c)   
+
+char *_strcat(char *dest, char *src)
 {
-	 return (write(1, &c, 1));  
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		j++;
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
+
 
